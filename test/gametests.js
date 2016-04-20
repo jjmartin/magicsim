@@ -9,24 +9,38 @@ chai.use(chaiAsPromised);
 var Game = require("../lib/game");
 
 describe("game", function() {
-    describe("init", function() {
-        it("has puts players decks into library", function() {
-            var players = [
+    describe("ctor", function() {
+        
+        it("puts players deck into separate libraries (shuffled)", function(){
+             var players = [
                 {
                     name: "player1",
                     deck: {
                         cards: [
-                            { name: "Island" }
+                            { name: "Island" },
+                            { name: "Plains" },
+                            { name: "Swamp" },
+                            { name: "Forest" },
+                            { name: "Mountain" }
                         ]
                     }
                 },
                 {
                     name: "player2",
-                    deck: {}
+                    deck: {
+                         cards: [
+                            { name: "Wastes" },
+                            { name: "Wastes" },
+                            { name: "Wastes" },
+                            { name: "Wastes" },
+                            { name: "Wastes" }
+                        ]
+                    }
                 }
             ];
             var game = new Game(players);
-            game.libraries[0].cards.length.should.be.equal(players[0].deck.cards.length);
+            game.libraries[0].cards.should.have.members(players[0].deck.cards);
+            game.libraries[1].cards.should.have.members(players[1].deck.cards);
         });
     });
 });
