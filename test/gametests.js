@@ -10,37 +10,47 @@ var Game = require("../lib/game");
 
 describe("game", function() {
     describe("ctor", function() {
-        
-        it("puts players deck into separate libraries (shuffled)", function(){
-             var players = [
-                {
-                    name: "player1",
-                    deck: {
-                        cards: [
-                            { name: "Island" },
-                            { name: "Plains" },
-                            { name: "Swamp" },
-                            { name: "Forest" },
-                            { name: "Mountain" }
-                        ]
-                    }
+        var players = [
+            {
+                name: "player1",
+                deck: {
+                    cards: [
+                        { name: "Island" },
+                        { name: "Plains" },
+                        { name: "Swamp" },
+                        { name: "Forest" },
+                        { name: "Mountain" }
+                    ]
                 },
-                {
-                    name: "player2",
-                    deck: {
-                         cards: [
-                            { name: "Wastes" },
-                            { name: "Wastes" },
-                            { name: "Wastes" },
-                            { name: "Wastes" },
-                            { name: "Wastes" }
-                        ]
-                    }
-                }
-            ];
+                initialDraw: sinon.stub()
+            },
+            {
+                name: "player2",
+                deck: {
+                    cards: [
+                        { name: "Wastes" },
+                        { name: "Wastes" },
+                        { name: "Wastes" },
+                        { name: "Wastes" },
+                        { name: "Wastes" }
+                    ]
+                },
+                initialDraw: sinon.stub()
+            }
+        ];
+        it("puts players deck into separate libraries (shuffled)", function() {
+
             var game = new Game(players);
             game.libraries[0].cards.should.have.members(players[0].deck.cards);
             game.libraries[1].cards.should.have.members(players[1].deck.cards);
         });
+
+        it("subscribes players to the shuffled event and emits shuffled",
+            function() {
+                    var game = new Game(players);
+                    players[0].initialDraw.should.have.been.called;
+                    players[1].initialDraw.should.have.been.called;
+                    
+            });
     });
 });
