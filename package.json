@@ -19,6 +19,6 @@
     "sinon-chai": "^2.8.0"
   },
   "dependencies": {
-    "shuffle": "^0.2.2"
+    "mtg-shuffle": "^0.0.1"
   }
 }

@@ -42,7 +42,9 @@ describe("game", function() {
 
             var game = new Game(players);
             game.libraries[0].cards.should.have.members(players[0].deck.cards);
+            game.libraries[0].should.equal(players[0].library);
             game.libraries[1].cards.should.have.members(players[1].deck.cards);
+            game.libraries[1].should.equal(players[1].library);
         });
 
         it("subscribes players to the shuffled event and emits shuffled",
