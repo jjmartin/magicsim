@@ -71,7 +71,7 @@
         "jsx-quotes": 2,
         "key-spacing": 2,
         "keyword-spacing": [
-            2,
+            0,
             {
                 "after": true,
                 "before": true
