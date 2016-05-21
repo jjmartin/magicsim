@@ -54,7 +54,7 @@ describe('shuffle', function() {
         var cardOverdraw = deck.draw.bind(deck, 1);
         cardOverdraw.should.throw('Tried to draw more cards than left in deck');
     });
-    
+
     it('draw more than deck has, errors', function() {
         var deck = new Deck(cards, rnd);
         var cardOverdraw = deck.draw.bind(deck, 6);

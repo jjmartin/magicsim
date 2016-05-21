@@ -12,13 +12,37 @@ describe("player", function() {
     describe("initialDraw", function() {
         it("draws 7 cards into players hand", function() {
             var player1 = new Player({
-                cards: [
-                    { name: "Wastes" },
-                    { name: "Wastes" },
-                    { name: "Wastes" },
-                    { name: "Wastes" },
-                    { name: "Wastes" }
-                ]
+                cards: [{
+                    name: "Wastes",
+                    cardnumber: 101,
+                    set: "OGW"
+                }, {
+                    name: "Wastes",
+                    cardnumber: 101,
+                    set: "OGW"
+                }, {
+                    name: "Wastes",
+                    cardnumber: 101,
+                    set: "OGW"
+                }, {
+                    name: "Wastes",
+                    cardnumber: 101,
+                    set: "OGW"
+                }, {
+                    name: "Wastes",
+                    cardnumber: 101,
+                    set: "OGW"
+                }, {
+                    name: "Island"
+                }, {
+                    name: "Plains"
+                }, {
+                    name: "Swamp"
+                }, {
+                    name: "Forest"
+                }, {
+                    name: "Mountain"
+                }]
             });
             var game = new Game([player1]);
             //game sets up library and emits event calling initialDraw    
