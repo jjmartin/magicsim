@@ -1,0 +1,37 @@
+{
+    "name": "player1",
+    "deck": {
+        "cards": [
+            {
+                "name": "Island"
+            },
+            {
+                "name": "Plains"
+            },
+            {
+                "name": "Swamp"
+            },
+            {
+                "name": "Forest"
+            },
+            {
+                "name": "Mountain"
+            },
+            {
+                "name": "Island"
+            },
+            {
+                "name": "Plains"
+            },
+            {
+                "name": "Swamp"
+            },
+            {
+                "name": "Forest"
+            },
+            {
+                "name": "Mountain"
+            }
+        ]
+    }
+}
