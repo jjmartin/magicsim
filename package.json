@@ -19,6 +19,7 @@
     "sinon-chai": "^2.8.0"
   },
   "dependencies": {
+    "log4js": "^0.6.36",
     "mtg-shuffle": "^0.0.1"
   }
 }
